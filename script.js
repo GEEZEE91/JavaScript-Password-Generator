@@ -1,23 +1,16 @@
 // Assignment Code
-
-
-
 var generateBtn = document.querySelector("#generate");
-
 
 function generatePassword(){
 
+//Define character options arrays for each option
+const lowerCase = ['abcdefghijklmnopqrstuvwxyz'];
+const upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const number =  ['1234567890'];
+const symbol = ['!@#$%^&*()<>?'];
 
-  
-
-const lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-const upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-const number =  ['1','2','3','4','5','6','7','8','9','0'];
-const symbol = ['!','@','#','$','%','^','&','*','?'];
-
- //Prompt User for password length
-
-  var userInput = window.prompt("What length do you want you password to be? Choose a number for password length  between 8 and 128 characters")
+//Prompt User for password length
+  var userInput = window.prompt("Please confirm total characters you want in your password? MUST BE between 8 to 128 characters")
   passwordLength = parseInt(userInput)
 
 // Validate Input is a Number
@@ -26,32 +19,29 @@ const symbol = ['!','@','#','$','%','^','&','*','?'];
       return
   }
 
- 
-// Validate Input length is a between 8 and 128 characters
-
+// Validate user input meets pw length criteria - ie between 8 and 128 characters
   if(passwordLength < 8 || passwordLength > 128) {
+//If less than 8 or more than 128 characters - ALERT user input invalid 
     window.alert("INVALID - Password length must be between 8 and 128 characters")
     return
   }
 
- //Prompt User to confirm what characters the password will contain
-
+//Prompt User to confirm what characters the password will contain
 var includeNumbers = window.confirm("Do you want numbers in the password?")
-
 var includeLowercase = window.confirm("Do you want lowercase letters in the password?")
-
 var includeUppercase = window.confirm("Do you want uppercase letters in the password?")
-
 var includeSymbols = window.confirm("Do you want symbols in the password?")
 
 //Validate one of the 4 character criteria was selected
 if(!includeNumbers && !includeLowercase && !includeUppercase && !includeSymbols){
-  alert("INVALID - Please select at least one criteria for the characters");
+//If no criteria selected - ALERT user invalid they must select at least one criteria
+  alert("INVALID - Please select at least one criteria for the characters to be included in the password");
   return;
 }
 
+// create new variable that will group together user selected options
 let Selectedoptions = ""
-
+//function to confirm if user selected true of false on specific criteria, if yes add to new var
 if (includeNumbers === true) {
   Selectedoptions= Selectedoptions + number;
 }
@@ -65,26 +55,22 @@ if (includeSymbols === true) {
   Selectedoptions= Selectedoptions + symbol;
 }
 
-
+//Run math.random * new var length to select random character from new user inputs var. 
+//Loop random selection in that var as many times as user requested for pw length
 let passwordCharacters = ""
-
-  for (let ii = 0; ii < passwordLength; ii++) {
+  for (let i = 0; i < passwordLength; i++) {
     const characterCode = Selectedoptions[ Math.floor( Math.random() * Selectedoptions.length)];
-    passwordCharacters = passwordCharacters + characterCode;
-  
+    passwordCharacters = passwordCharacters + characterCode; 
   }
-  // return the password
+// return the password
   return passwordCharacters;
-
 }
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
