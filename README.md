@@ -17,7 +17,14 @@ The user is than required to answer 4  Yes (ok) or No (cancel) questions by foll
  
 ![image](https://user-images.githubusercontent.com/3950562/187994061-9ae7c749-1d84-4c7f-b001-fd181a1b895d.png)
 
-<b> 
+If no character type selected INVALID propmp appears and user returned to genrate password page again.
+
+ ![image](https://user-images.githubusercontent.com/3950562/187994978-98b99c00-d024-490a-a0bb-2a4aeec35a8d.png)
+
+ If user meets password length criteria and has selected at least one type of character catergoty to include, random password generated based on the users requests. 
+ Returned to main page and random password generated.
+ 
+ ![image](https://user-images.githubusercontent.com/3950562/187995285-9fc95645-e3f3-4916-9a6c-933d6060edab.png)
 
 
 
