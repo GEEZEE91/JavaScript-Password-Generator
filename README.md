@@ -1,6 +1,6 @@
 # 03-JavaScript-Password-Generator
 
-<b> Description <b>
+<b> Description </b>
 
 With the use of Java script Generates a Random Passwords with characters types specified by the user.
  
@@ -12,7 +12,7 @@ When the user presses the generate password button a window prompt will pop up r
  ![numbers](https://user-images.githubusercontent.com/3950562/187989082-74907fef-db62-44c7-a6fb-ba8d272eb02c.png)
 
  
-  Length needs to be between 8 to 128 characters, if out side this criteria Invalid prompt pop up and they will be returned to generate password button.
+ Length needs to be between 8 to 128 characters, if out side this criteria Invalid prompt pop up and they will be returned to generate password button.
  
 ![image](https://user-images.githubusercontent.com/3950562/187994534-a98b73f4-1bd7-467e-9650-0b2339e58e2a.png)
 
